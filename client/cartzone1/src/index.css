@@ -641,6 +641,69 @@
   color: #ffffff;
 }
 
+.product-card {
+  min-width: 250px;
+  max-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  height: 180px;
+  object-fit: cover;
+  background-color: #f8f9fa; /* Light grey fallback */
+}
+
+.product-card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-card .card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: #1c2a3a;
+}
+
+.product-card .card-text {
+  font-size: 1rem;
+  color: #28a745; /* Bootstrap green */
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.product-card .btn {
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.product-card .btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.product-card .btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.product-card .btn-secondary[disabled] {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  cursor: not-allowed;
+}
+
+
 .newsletter-form {
   display: flex;
   flex-wrap: wrap;

@@ -37,7 +37,7 @@ function Cart() {
           } else if (res.status === 403) {
             throw new Error("Access denied to cart.");
           } else {
-            return res.json().then(errData => { // Try to get more specific error from backend
+            return res.json().then(errData => {
                 throw new Error(errData.message || `Failed to fetch cart: ${res.statusText}`);
             });
           }

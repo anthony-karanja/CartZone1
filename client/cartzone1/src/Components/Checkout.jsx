@@ -13,7 +13,7 @@ function Checkout({ cartItems = [], onOrderSuccess }) {
     0
   );
 
-  const handlePlaceOrder = () => { // No 'async' keyword here
+  const handlePlaceOrder = () => { 
     setLoading(true);
     setMessage("");
 
@@ -26,7 +26,7 @@ function Checkout({ cartItems = [], onOrderSuccess }) {
     const orderPayload = {
       total_amount: total,
       order_items: cartItems.map((item) => ({
-        product_id: item.product_id, // This should be available from the backend cart item
+        product_id: item.product_id,
         quantity: item.quantity,
         price_at_purchase: item.product?.price,
       })),
@@ -48,7 +48,7 @@ function Checkout({ cartItems = [], onOrderSuccess }) {
           }
           return response.json();
       })
-      .then(() => { // Assuming success doesn't return much
+      .then(() => { 
         setMessage("Order placed successfully!");
         onOrderSuccess?.();
       })

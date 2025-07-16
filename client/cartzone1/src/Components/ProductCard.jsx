@@ -37,25 +37,24 @@ function ProductCard({ product }) {
   };
 
   return (
-    <div className="card h-100 shadow-sm product-card" style={{ minWidth: 250, maxWidth: 300 }}>
-      <img 
-        src={product.image_url} 
-        alt={product.name} 
-        className="card-img-top"
-        style={{ height: 180, objectFit: 'cover', background: '#f8f9fa' }}
-      />
-      <div className="card-body d-flex flex-column">
-        <h5 className="card-title text-center">{product.name}</h5>
-        <p className="card-text text-success text-center mb-3">KES {product.price.toLocaleString()}</p>
-        <div className="d-grid">
-          {user ? (
-            <button className="btn btn-success" onClick={handleAddToCart}>Add to Cart</button>
-          ) : (
-            <button className="btn btn-secondary" disabled title="Log in to add to cart">Add to Cart</button>
-          )}
-        </div>
-      </div>
+    <div className="card h-100 shadow-sm product-card">
+  <img 
+    src={product.image_url} 
+    alt={product.name} 
+    className="card-img-top"
+  />
+  <div className="card-body">
+    <h5 className="card-title">{product.name}</h5>
+    <p className="card-text">KES {product.price.toLocaleString()}</p>
+    <div className="d-grid">
+      {user ? (
+        <button className="btn btn-success" onClick={handleAddToCart}>Add to Cart</button>
+      ) : (
+        <button className="btn btn-secondary" disabled title="Log in to add to cart">Add to Cart</button>
+      )}
     </div>
+  </div>
+</div>
   );
 }
 

@@ -6,7 +6,7 @@ from werkzeug.security import generate_password_hash
 
 with app.app_context():
 
-    # Optional: Clear all data
+    
     db.session.query(Order_item).delete()
     db.session.query(Cart_item).delete()
     db.session.query(Orders).delete()
